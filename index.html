@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Countdown to 16/7</title>
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#00ffc8" />
+
+  <style>
+    :root {
+      --bg-color: #ffffff;
+      --text-color: #121212;
+      --accent-color: #0066cc;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg-color: #121212;
+        --text-color: #e0e0e0;
+        --accent-color: #5F7BA9;
+      }
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+    }
+
+    #countdown {
+      font-size: 2.5em;
+      color: var(--accent-color);
+    }
+  </style>
+</head>
+<body>
+  <h1>🎉Countdown to DSE Result Release🎉</h1>
+  <div id="countdown">Loading...</div>
+  <script src="countdown.js"></script>
+  <script>
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("service-worker.js")
+      .then(() => console.log("Service Worker registered"));
+  }
+</script>
+
+</body>
+</html>
