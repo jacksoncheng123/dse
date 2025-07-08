@@ -1,12 +1,11 @@
 function updateCountdown() {
-  const hktOffset = 8 * 60; // HKT is UTC+8
-  const nowUTC = new Date();
-  const nowHKT = new Date(nowUTC.getTime() + (hktOffset - nowUTC.getTimezoneOffset()) * 60000);
+  // Get current time
+  const now = new Date();
+  
+  // 🎯 Target date: 8:30 AM on July 16, 2025 in HKT (UTC+8)
+  const targetDate = new Date('2025-07-16T08:30:00+08:00');
 
-  // 🎯 Replace with your target date and time in HKT
-  const targetDate = new Date('2025-07-16T08:30:00+00:00');
-
-  const diff = targetDate - nowHKT;
+  const diff = targetDate - now;
 
   if (diff <= 0) {
     document.getElementById("countdown").textContent = "🎉 It's time!";
