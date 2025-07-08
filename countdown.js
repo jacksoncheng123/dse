@@ -4,7 +4,7 @@ function updateCountdown() {
   const nowHKT = new Date(nowUTC.getTime() + (hktOffset - nowUTC.getTimezoneOffset()) * 60000);
 
   // 🎯 Replace with your target date and time in HKT
-  const targetDate = new Date('2025-07-16T08:30:00+08:00');
+  const targetDate = new Date('2025-07-16T08:30:00+00:00');
 
   const diff = targetDate - nowHKT;
 
