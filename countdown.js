@@ -3,7 +3,7 @@ function updateCountdown() {
   const now = new Date();
   
   // 🎯 Target date: 8:30 AM on July 16, 2025 in HKT (UTC+8)
-  const targetDate = new Date('2025-08-13T07:00:00+08:00');
+  const targetDate = new Date('2025-09-10T01:00:00+08:00');
 
   const diff = targetDate - now;
 
