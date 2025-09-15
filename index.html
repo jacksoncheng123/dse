@@ -39,6 +39,10 @@
       margin-bottom: 20px;
       align-items: center;
       text-align: center;
+      white-space: nowrap;
+      font-size: 4vw;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
 
     #countdown {
@@ -52,11 +56,24 @@
   <div id="countdown">Loading...</div>
   <script src="countdown.js"></script>
   <script>
-  if ("serviceWorker" in navigator) {
-    navigator.serviceWorker.register("service-worker.js")
-      .then(() => console.log("Service Worker registered"));
-  }
-</script>
+    // Service worker registration
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("service-worker.js")
+        .then(() => console.log("Service Worker registered"));
+    }
 
+    // Responsive font size adjustment for countdown
+    function adjustCountdownFontSize() {
+      const countdown = document.getElementById('countdown');
+      let fontSize = 2.5;
+      countdown.style.fontSize = fontSize + 'em';
+      while (countdown.scrollWidth > countdown.clientWidth && fontSize > 1) {
+        fontSize -= 0.1;
+        countdown.style.fontSize = fontSize + 'em';
+      }
+    }
+    setInterval(adjustCountdownFontSize, 1000);
+    window.addEventListener('resize', adjustCountdownFontSize);
+    document.addEventListener('DOMContentLoaded', adjustCountdownFontSize);
+  </script>
 </body>
-</html>
