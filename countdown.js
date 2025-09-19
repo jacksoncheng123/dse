@@ -3,7 +3,7 @@ function updateCountdown() {
   const now = new Date();
   
   // 🎯 Target date: 8:30 AM on September 16, 2025 in HKT (UTC+8)
-  const targetDate = new Date('2025-09-19T08:00:00+08:00');
+  const targetDate = new Date('2025-10-04T08:00:00+08:00');
 
   // Update website title to "Countdown to (date)"
   const day = targetDate.getDate();
